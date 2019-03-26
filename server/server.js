@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 //user routes
 app.use("/users", users);
 //project routes
-app.use("/projecst", projects);
+app.use("/projects", projects);
 
 app.get("/", (req, res) => res.send("Hello World!"));
 
