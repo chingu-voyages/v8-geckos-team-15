@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const app = express();
 const users = require("./routes/users");
 const projects = require("./routes/projects");
-const bodyParser = require("./body-parser");
+const bodyParser = require("body-parser");
 const { dbPassword } = require("./config");
-const port = 3000;
+const port = 4000;
 console.log(dbPassword);
 const URI = `mongodb://user1:${dbPassword}@ds111455.mlab.com:11455/v8-chingu-geckos-15`;
 
