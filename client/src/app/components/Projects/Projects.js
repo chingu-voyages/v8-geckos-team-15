@@ -14,7 +14,7 @@ const projects = [
       "http://gundamevolve.com/wp-content/uploads/2018/08/gundam-build-fighters-wallpaper-800x340.png"
   },
   {
-    projectTitle: "Coding Like a Super SuperHero",
+    projectTitle: "Coding Like a SuperHero",
     projectDescription:
       "This is a project on a 'heroic' scale. Only join if you have what it takes! We live in a world of amazing technologies and technologies are evolving even faster then we can think. Computers are the center of this evolution and an important part of the world we live in.",
     projectLevel: 5,
