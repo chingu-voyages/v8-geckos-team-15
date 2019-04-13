@@ -1,6 +1,7 @@
 import React from "react";
 import "./project-tile.css";
 import ProjectTileLevel from "../projectTileLevel/ProjectTileLevel";
+import Members from "../members/Members";
 import Stack from "../projectTileStack/ProjectTileStack";
 
 const formatDescription = description =>
@@ -11,7 +12,8 @@ const ProjectTile = ({
   projectDescription,
   projectLevel,
   projectLanguages,
-  projectImage
+  projectImage,
+  projectMembers
 }) => {
   return (
     <>
@@ -32,13 +34,9 @@ const ProjectTile = ({
           </div>
           <div className="levelAndMembers">
             <div className="level">
-              complexity
               <ProjectTileLevel level={projectLevel} />
             </div>
-            <div className="members">
-              <i class="fas fa-user" />
-              3-5
-            </div>
+            <Members members={projectMembers} />
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ const projects = [
     projectDescription: "This is a project about creating a website for coders",
     projectLevel: 2,
     projectLanguages: ["javascript", "react", "mongodb", "nodejs", "angularjs"],
+    projectMembers: 3,
     projectImage:
       "http://gundamevolve.com/wp-content/uploads/2018/08/gundam-build-fighters-wallpaper-800x340.png"
   },
@@ -18,6 +19,7 @@ const projects = [
       "This is a project on a 'heroic' scale. Only join if you have what it takes! s is a project on a 'heroic' scale. Only join if you have what it takes!",
     projectLevel: 5,
     projectLanguages: ["javascript", "css3", "html5", "webpack"],
+    projectMembers: 5,
     projectImage:
       "https://cnet4.cbsistatic.com/img/93e1i19Xfu42_Qu0B81j7s-p6s4=/1600x900/2019/03/14/c12c9e9d-e470-4020-a699-5c4be5509321/avengers-endgame-poster-og-social-crop.jpg"
   }
@@ -48,7 +50,8 @@ export function Projects() {
           projectDescription,
           projectLevel,
           projectLanguages,
-          projectImage
+          projectImage,
+          projectMembers
         }) => {
           return (
             <ProjectTile
@@ -57,6 +60,7 @@ export function Projects() {
               projectLevel={projectLevel}
               projectLanguages={projectLanguages}
               projectImage={projectImage}
+              projectMembers={projectMembers}
             />
           );
         }

@@ -3,14 +3,3 @@
   flex-wrap: wrap;
   width: 100%;
 }
-
-.levelAndMembers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.level,
-.members {
-  margin: 2px;
-}
