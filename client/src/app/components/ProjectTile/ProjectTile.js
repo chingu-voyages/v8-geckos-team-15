@@ -5,7 +5,10 @@ import Members from "../members/Members";
 import Stack from "../projectTileStack/ProjectTileStack";
 
 const formatDescription = description =>
-  description.length > 80 ? description.substring(0, 80) + "..." : description;
+  description.length > 80 ? description.substring(0, 100) + "..." : description;
+
+const formatTitle = title =>
+  title.length > 25 ? title.substring(0, 25) + "..." : title;
 
 const ProjectTile = ({
   projectTitle,
@@ -24,7 +27,9 @@ const ProjectTile = ({
             backgroundImage: `url(${projectImage})`
           }}
         />
-        <div className="project-title">{projectTitle}</div>
+        <div className="project-title">
+          {formatTitle(projectTitle).toUpperCase()}
+        </div>
         <div className="project-description">
           {formatDescription(projectDescription)}
         </div>
