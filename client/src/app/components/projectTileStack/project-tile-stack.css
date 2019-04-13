@@ -1,0 +1,11 @@
+.stack {
+  font-size: 30px;
+  color: yeollow;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+i {
+  margin: 1px;
+}
