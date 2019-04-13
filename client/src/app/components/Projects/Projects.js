@@ -6,8 +6,7 @@ import ProjectTile from "../ProjectTile/ProjectTile";
 const projects = [
   {
     projectTitle: "Coding for Fun",
-    projectDescription:
-      "This is a project about creating a website for coders...",
+    projectDescription: "This is a project about creating a website for coders",
     projectLevel: 2,
     projectLanguages: ["javascript", "react", "mongodb", "nodejs", "angularjs"],
     projectImage:
@@ -16,7 +15,7 @@ const projects = [
   {
     projectTitle: "Coding Like a SuperHero",
     projectDescription:
-      "This is a project on a 'heroic' scale. Only join if you have what it takes!",
+      "This is a project on a 'heroic' scale. Only join if you have what it takes! s is a project on a 'heroic' scale. Only join if you have what it takes!",
     projectLevel: 5,
     projectLanguages: ["javascript", "css3", "html5", "webpack"],
     projectImage:

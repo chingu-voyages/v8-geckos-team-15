@@ -2,20 +2,16 @@
   display: flex;
 }
 
+.level-no-fill,
 .level-fill {
-  width: 10px;
-  height: 10px;
-  background: rgb(216, 186, 19);
+  width: 8px;
+  height: 8px;
+  background: transparent;
   border-radius: 100%;
   margin: 1px;
   border: 1px solid black;
 }
 
-.level-no-fill {
-  width: 10px;
-  height: 10px;
-  background: transparent;
-  border-radius: 100%;
-  margin: 1px;
-  border: 1px solid black;
+.level-fill {
+  background: rgb(216, 186, 19);
 }

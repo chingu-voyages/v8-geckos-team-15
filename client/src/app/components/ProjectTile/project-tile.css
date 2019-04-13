@@ -36,12 +36,14 @@
   text-align: left;
   padding: 10px;
   color: rgb(75, 75, 75);
+  overflow: hidden;
 }
 
 .project-footer {
   width: 100%;
   background: white;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   padding: 10px;
 }

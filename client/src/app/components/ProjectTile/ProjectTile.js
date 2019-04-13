@@ -3,6 +3,9 @@ import "./project-tile.css";
 import ProjectTileLevel from "../projectTileLevel/ProjectTileLevel";
 import Stack from "../projectTileStack/ProjectTileStack";
 
+const formatDescription = description =>
+  description.length > 80 ? description.substring(0, 80) + "..." : description;
+
 const ProjectTile = ({
   projectTitle,
   projectDescription,
@@ -20,13 +23,16 @@ const ProjectTile = ({
           }}
         />
         <div className="project-title">{projectTitle}</div>
-        <div className="project-description">{projectDescription}</div>
+        <div className="project-description">
+          {formatDescription(projectDescription)}
+        </div>
         <div className="project-footer">
           <div className="stack-container">
             <Stack languages={projectLanguages} />
           </div>
           <div className="levelAndMembers">
             <div className="level">
+              complexity
               <ProjectTileLevel level={projectLevel} />
             </div>
             <div className="members">
