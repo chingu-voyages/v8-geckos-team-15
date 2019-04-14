@@ -1,0 +1,122 @@
+h1 {
+  font-size: 20px;
+  margin: 10px;
+  color: #312a31;
+}
+
+.header {
+  width: 100%;
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #e8e9eb;
+  box-shadow: 0 2px 2px 2px #e8e9eb;
+  font-size: 16px;
+}
+
+.logo {
+  font-size: 25px;
+  color: #ec5252;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li {
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+li:hover {
+  background: #f2f3f5;
+  border: 1px solid #e8e9eb;
+  cursor: pointer;
+}
+
+.input-container {
+  width: 40vw;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e8e9eb;
+  display: flex;
+  justify-content: space-between;
+}
+.searchBarGrey {
+  background: #f2f3f5;
+}
+.searchBarWhite {
+  background: white;
+}
+
+input {
+  height: 100%;
+  width: 100%;
+  margin-left: 10px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: none;
+  border: none;
+  height: 100%;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  color: #ec5252;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #ec5252;
+  color: white;
+}
+
+#space-balancer {
+  width: 100px;
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  #space-balancer {
+    display: block;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding: 0 10px 0 10px;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .side-menu {
+    display: block;
+  }
+
+  .side-menu ul li {
+  }
+
+  .side-menu-hide {
+    left: -300px;
+  }
+}
