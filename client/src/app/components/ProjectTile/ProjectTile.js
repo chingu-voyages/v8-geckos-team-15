@@ -7,48 +7,41 @@ import Stack from "../projectTileStack/ProjectTileStack";
 const formatDescription = description =>
   description.length > 80 ? description.substring(0, 100) + "..." : description;
 
-const formatTitle = title =>
-  title.length > 25 ? title.substring(0, 25) + "..." : title;
-
 const ProjectTile = ({
-  projectTitle,
-  projectDescription,
-  projectLevel,
-  projectLanguages,
-  projectImage,
-  projectMembers
+  title,
+  description,
+  level,
+  languages,
+  image,
+  members
 }) => {
   return (
-    <>
+    <div
+      onClick={() => alert(title + " | " + description)}
+      className="project-container"
+    >
       <div
-        onClick={() => alert(projectTitle + " | " + projectDescription)}
-        className="project-container"
-      >
-        <div
-          className="project-image"
-          style={{
-            backgroundImage: `url(${projectImage})`
-          }}
-        />
-        <div className="project-title">
-          {formatTitle(projectTitle).toUpperCase()}
+        className="project-image"
+        style={{
+          backgroundImage: `url(${image})`
+        }}
+      />
+      <div className="project-title">{title}</div>
+      <div className="project-description">
+        {formatDescription(description)}
+      </div>
+      <div className="project-footer">
+        <div className="stack-container">
+          <Stack languages={languages} />
         </div>
-        <div className="project-description">
-          {formatDescription(projectDescription)}
-        </div>
-        <div className="project-footer">
-          <div className="stack-container">
-            <Stack languages={projectLanguages} />
+        <div className="levelAndMembers">
+          <div className="level">
+            <ProjectTileLevel level={level} />
           </div>
-          <div className="levelAndMembers">
-            <div className="level">
-              <ProjectTileLevel level={projectLevel} />
-            </div>
-            <Members members={projectMembers} />
-          </div>
+          <Members members={members} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
