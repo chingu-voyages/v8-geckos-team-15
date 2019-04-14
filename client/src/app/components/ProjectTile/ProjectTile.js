@@ -20,7 +20,10 @@ const ProjectTile = ({
 }) => {
   return (
     <>
-      <div className="project-container">
+      <div
+        onClick={() => alert(projectTitle + " | " + projectDescription)}
+        className="project-container"
+      >
         <div
           className="project-image"
           style={{
