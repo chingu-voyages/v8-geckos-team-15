@@ -26,18 +26,18 @@ h1 {
   align-items: center;
 }
 
-ul {
+.nav-container ul {
   display: flex;
   list-style-type: none;
 }
 
-li {
+.nav-container ul li {
   margin: 0 5px 0 5px;
   padding: 10px;
   border: 1px solid transparent;
 }
 
-li:hover {
+.nav-container ul li:hover {
   background: #f2f3f5;
   border: 1px solid #e8e9eb;
   cursor: pointer;
@@ -52,23 +52,26 @@ li:hover {
   display: flex;
   justify-content: space-between;
 }
-.searchBarGrey {
+
+.search-bar {
   background: #f2f3f5;
 }
-.searchBarWhite {
+
+.search-bar-active {
   background: white;
 }
 
-input {
+.input-container input {
   height: 100%;
   width: 100%;
   margin-left: 10px;
   padding: 0;
   border: none;
   outline: none;
+  background: transparent;
 }
 
-button {
+.input-container button {
   background: none;
   border: none;
   height: 100%;
@@ -78,7 +81,7 @@ button {
   color: #ec5252;
 }
 
-button:hover {
+.input-container button:hover {
   cursor: pointer;
   background: #ec5252;
   color: white;
@@ -107,16 +110,5 @@ button:hover {
 
   .header {
     justify-content: space-between;
-  }
-
-  .side-menu {
-    display: block;
-  }
-
-  .side-menu ul li {
-  }
-
-  .side-menu-hide {
-    left: -300px;
   }
 }

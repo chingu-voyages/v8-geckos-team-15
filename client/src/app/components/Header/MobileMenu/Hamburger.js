@@ -5,6 +5,7 @@ class HamburgerMenu extends React.Component {
   constructor(props) {
     super(props);
     this.handleTransition = this.handleTransition.bind(this);
+
     this.state = {
       open: false,
       bar1: undefined,
@@ -29,9 +30,9 @@ class HamburgerMenu extends React.Component {
       this.setState(() => {
         return {
           open: false,
-          bar1: "bar-1-animate-rev",
-          bar2: "bar-2-animate-rev",
-          bar3: "bar-3-animate-rev",
+          bar1: "bar-1-animate-reverse",
+          bar2: "bar-2-animate-reverse",
+          bar3: "bar-3-animate-reverse",
           hide: true
         };
       });
@@ -58,8 +59,8 @@ const Nav = ({ stateData, handleTransition, hide }) => (
         <div className={`bar ${stateData.bar3}`} id="bar-3" />
       </div>
     </nav>
-    <div class={hide ? "side-menu side-menu-hide" : "side-menu"}>
-      <div id="side-menu-container">
+    <div className={hide ? "side-menu side-menu-hide" : "side-menu"}>
+      <div className="side-menu-container">
         <ul>
           <li>Projects</li>
           <li>About Us</li>

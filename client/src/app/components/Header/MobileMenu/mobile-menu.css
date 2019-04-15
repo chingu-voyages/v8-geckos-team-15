@@ -25,7 +25,7 @@ nav {
   background-color: #312a31;
 }
 
-nav:hover {
+nav {
   cursor: pointer;
 }
 
@@ -42,7 +42,7 @@ nav:hover {
   animation: bar-1 0.3s;
   animation-fill-mode: forwards;
 }
-#bar-1.bar-1-animate-rev {
+#bar-1.bar-1-animate-reverse {
   animation: bar-1-rev 0.3s;
   animation-fill-mode: forwards;
 }
@@ -50,7 +50,7 @@ nav:hover {
   animation: bar-2 0.1s;
   animation-fill-mode: forwards;
 }
-#bar-2.bar-2-animate-rev {
+#bar-2.bar-2-animate-reverse {
   opacity: 0;
   animation: bar-2-rev 0.3s;
   animation-fill-mode: forwards;
@@ -61,7 +61,7 @@ nav:hover {
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
 }
-#bar-3.bar-3-animate-rev {
+#bar-3.bar-3-animate-reverse {
   animation: bar-3-rev 0.3s;
   animation-fill-mode: forwards;
 }
@@ -148,6 +148,7 @@ nav:hover {
 }
 
 /* Side menu styling */
+
 .side-menu {
   position: absolute;
   top: 90px;
@@ -158,15 +159,38 @@ nav:hover {
   transition: left 0.5s ease-in-out;
 }
 
-#side-menu-container {
+.side-menu-container {
   padding: 15px;
 }
 
-#side-menu-container > ul {
+.side-menu-container ul {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
 }
 
-#side-menu-container > ul > li {
+.side-menu-container ul li {
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  border: 1px solid transparent;
   border-bottom: 1px solid #e8e9eb;
+}
+
+.side-menu-container ul li:hover {
+  background: #f2f3f5;
+  border: 1px solid #e8e9eb;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .side-menu {
+    display: block;
+  }
+
+  .side-menu ul li {
+  }
+
+  .side-menu-hide {
+    left: -300px;
+  }
 }

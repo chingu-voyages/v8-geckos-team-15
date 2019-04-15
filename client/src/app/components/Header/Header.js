@@ -16,8 +16,10 @@ class Input extends React.Component {
     return (
       <div
         className={`${
-          this.state.inputBg === "grey" ? "searchBarGrey" : "searchBarWhite"
-        } input-container`}
+          this.state.inputBg === "grey"
+            ? "search-bar input-container"
+            : "search-bar-active input-container"
+        }`}
       >
         <input
           onFocus={() => {
@@ -27,9 +29,6 @@ class Input extends React.Component {
             this.setState({ inputBg: "grey" });
           }}
           placeholder="Search for a project"
-          className={`${
-            this.state.inputBg === "grey" ? "searchBarGrey" : "searchBarWhite"
-          }`}
         />
         <button>
           <i class="fas fa-search" />
