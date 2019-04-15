@@ -1,0 +1,17 @@
+.level-container {
+  display: flex;
+}
+
+.level-no-fill,
+.level-fill {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 100%;
+  margin: 2px;
+  border: 1px solid black;
+}
+
+.level-fill {
+  background: rgb(216, 186, 19);
+}
