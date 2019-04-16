@@ -2,20 +2,18 @@ import React from "react";
 import HamburgerMenu from "./MobileMenu/Hamburger";
 import SearchBar from "./SearchBar/SearchBar";
 
-import "./header.css";
+import styles from "./header.module.css";
 
 export const Header = () => (
-  <div className="header">
+  <div className={styles.header}>
     <HamburgerMenu />
 
-    <div className="logo">
-      <h1>
-        ProjectCode
-        <i className="fas fa-code logo" />
-      </h1>
+    <div className={styles.logo}>
+      <h1 className={styles.logoTitle}>ProjectCode</h1>
+      <i className="fas fa-code logo" />
     </div>
 
-    <div className="nav-container">
+    <div className={styles.navContainer}>
       <SearchBar />
       <ul>
         <li>Projects</li>

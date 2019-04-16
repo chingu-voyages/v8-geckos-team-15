@@ -1,9 +1,3 @@
-h1 {
-  font-size: 20px;
-  margin: 10px;
-  color: #312a31;
-}
-
 .header {
   width: 100%;
   margin: 0;
@@ -21,38 +15,38 @@ h1 {
   color: #ec5252;
 }
 
-.nav-container {
+.logoTitle {
+  font-size: 20px;
+  margin: 10px;
+  color: #312a31;
+  display: inline-block;
+}
+
+.navContainer {
   display: flex;
   align-items: center;
 }
 
-.nav-container ul {
+.navContainer ul {
   display: flex;
   list-style-type: none;
 }
 
-.nav-container ul li {
+.navContainer ul li {
   margin: 0 5px 0 5px;
   padding: 10px;
   border: 1px solid transparent;
-}
-
-.nav-container ul li:hover {
-  background: #f2f3f5;
-  border: 1px solid #e8e9eb;
   cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
-  .nav-container {
-    display: none;
-  }
+.navContainer ul li:hover {
+  background: #f2f3f5;
+  border: 1px solid #e8e9eb;
+}
 
-  nav {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    padding: 0 10px 0 10px;
+@media screen and (max-width: 800px) {
+  .navContainer {
+    display: none;
   }
 
   .header {
