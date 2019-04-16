@@ -43,60 +43,7 @@ h1 {
   cursor: pointer;
 }
 
-.input-container {
-  width: 40vw;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #e8e9eb;
-  display: flex;
-  justify-content: space-between;
-}
-
-.search-bar {
-  background: #f2f3f5;
-}
-
-.search-bar-active {
-  background: white;
-}
-
-.input-container input {
-  height: 100%;
-  width: 100%;
-  margin-left: 10px;
-  padding: 0;
-  border: none;
-  outline: none;
-  background: transparent;
-}
-
-.input-container button {
-  background: none;
-  border: none;
-  height: 100%;
-  width: 50px;
-  margin: 0;
-  padding: 0;
-  color: #ec5252;
-}
-
-.input-container button:hover {
-  cursor: pointer;
-  background: #ec5252;
-  color: white;
-}
-
-#space-balancer {
-  width: 100px;
-  display: none;
-}
-
 @media screen and (max-width: 800px) {
-  #space-balancer {
-    display: block;
-  }
-
   .nav-container {
     display: none;
   }
@@ -109,6 +56,6 @@ h1 {
   }
 
   .header {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 }

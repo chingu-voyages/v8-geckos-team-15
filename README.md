@@ -11,3 +11,7 @@ Add-project-description-here | Voyage-8 | https://chingu.io/
 ### Code format
 
 - `prettier` - needs to be installed as an extension, and enabled
+
+### Styling
+
+- [`css modules`](https://github.com/css-modules/css-modules) - for scoped CSS with useful extra features (variables, composing)
