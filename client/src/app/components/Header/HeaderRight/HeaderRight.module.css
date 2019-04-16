@@ -1,0 +1,30 @@
+.container {
+  padding: 15px;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+}
+.list.horizontal {
+  flex-direction: row;
+}
+.list.vertical {
+  flex-direction: column;
+}
+
+.list li {
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.list li:hover {
+  background: #f2f3f5;
+  border: 1px solid #e8e9eb;
+}
+
+.vertical li {
+  border-bottom: 1px solid #e8e9eb;
+}

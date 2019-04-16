@@ -1,0 +1,39 @@
+@value gray: #f2f3f5;
+@value red: #ec5252;
+
+.container {
+  width: 40vw;
+  height: 35px;
+  align-items: center;
+  border: 1px solid #e8e9eb;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background: gray;
+}
+.input:focus {
+  background: white;
+}
+
+.button {
+  background: gray;
+  border: none;
+  height: 100%;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  color: red;
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {
+  background: red;
+  color: white;
+}
