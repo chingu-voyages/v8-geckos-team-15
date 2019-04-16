@@ -27,23 +27,6 @@
   align-items: center;
 }
 
-.navContainer ul {
-  display: flex;
-  list-style-type: none;
-}
-
-.navContainer ul li {
-  margin: 0 5px 0 5px;
-  padding: 10px;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
-
-.navContainer ul li:hover {
-  background: #f2f3f5;
-  border: 1px solid #e8e9eb;
-}
-
 @media screen and (max-width: 800px) {
   .navContainer {
     display: none;

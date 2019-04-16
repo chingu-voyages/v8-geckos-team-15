@@ -1,6 +1,7 @@
 import React from "react";
 import HamburgerMenu from "./MobileMenu/Hamburger";
 import SearchBar from "./SearchBar/SearchBar";
+import HeaderRight from "./HeaderRight/HeaderRight";
 
 import styles from "./header.module.css";
 
@@ -15,10 +16,7 @@ export const Header = () => (
 
     <div className={styles.navContainer}>
       <SearchBar />
-      <ul>
-        <li>Projects</li>
-        <li>About Us</li>
-      </ul>
+      <HeaderRight direction="horizontal" />
     </div>
   </div>
 );
