@@ -63,7 +63,7 @@ class Projects extends Component {
         filters: { ...this.state.filters, [name]: { type, value } }
       });
     } else {
-      // Delete the filter when there is no selected value
+      // Delete the filter when it is empty
       const newFilters = { ...this.state.filters };
       delete newFilters[name];
 

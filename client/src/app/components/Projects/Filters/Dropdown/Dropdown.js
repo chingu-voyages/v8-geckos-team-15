@@ -16,17 +16,11 @@ class Dropdown extends Component {
   }
 
   removeEventListener = () => {
-    document.body.removeEventListener(
-      "click",
-      this.detectClickOutside.bind(this)
-    );
+    document.body.removeEventListener("click", this.detectClickOutside.bind(this));
   };
 
   detectClickOutside = event => {
-    if (
-      this.state.areOptionsShown &&
-      !this.containerRef.current.contains(event.target)
-    ) {
+    if (this.state.areOptionsShown && !this.containerRef.current.contains(event.target)) {
       this.hideOptions();
     }
   };
@@ -66,9 +60,7 @@ class Dropdown extends Component {
 
     if (this.isSelected(newSelectedOption)) {
       if (multiselect) {
-        newOptions = selectedOptions.filter(
-          option => newSelectedOption !== option
-        );
+        newOptions = selectedOptions.filter(option => newSelectedOption !== option);
       } else {
         newOptions = [];
       }
@@ -115,16 +107,12 @@ class Dropdown extends Component {
             <div
               key={index}
               className={classNames(styles.item, {
-                [styles.selected]: this.isSelected(options[index])
+                [styles.selected]: !multiselect && this.isSelected(options[index])
               })}
               onClickCapture={this.handleChange(options[index])}
             >
               {multiselect && (
-                <input
-                  type="checkbox"
-                  value={option}
-                  checked={this.isSelected(options[index])}
-                />
+                <input type="checkbox" value={option} checked={this.isSelected(options[index])} />
               )}
               <label>{option}</label>
             </div>
