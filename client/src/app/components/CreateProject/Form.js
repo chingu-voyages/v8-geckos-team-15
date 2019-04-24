@@ -6,7 +6,25 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { titleValue: "", descriptionValue: "" };
+    this.state = {
+      titleValue: "",
+      descriptionValue: "",
+      languages: [],
+      complexity: "",
+      members: 0
+    };
+  }
+
+  onUpdateSelection(buttonTitle, type) {
+    if (type === "language") {
+      this.setState(prevState => ({
+        languages: [...prevState.languages, buttonTitle]
+      }));
+    } else if (type === "complexity") {
+      this.setState({ complexity: buttonTitle });
+    } else if (type === "members") {
+      this.setState({ members: buttonTitle });
+    }
   }
 
   onChangeInput(e) {
@@ -18,7 +36,14 @@ class Form extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    this.setState({ titleValue: "", descriptionValue: "" });
+    this.setState({
+      titleValue: "",
+      descriptionValue: "",
+      languages: [],
+      complexity: "",
+      members: 0,
+      resetButtons: true
+    });
   }
 
   render() {
@@ -73,6 +98,9 @@ class Form extends React.Component {
                 "Sass"
               ]}
               maxAllowed={5}
+              onUpdateSelection={buttonTitle =>
+                this.onUpdateSelection(buttonTitle, "language")
+              }
             />
           </div>
           <div className="complexity-input-wrapper form-item">
@@ -82,6 +110,9 @@ class Form extends React.Component {
             <ButtonContainer
               maxAllowed={1}
               buttons={["Beginner", "Intermediate", "Advance"]}
+              onUpdateSelection={buttonTitle =>
+                this.onUpdateSelection(buttonTitle, "complexity")
+              }
             />
           </div>
           <div className="members-input-wrapper form-item">
@@ -92,6 +123,9 @@ class Form extends React.Component {
             <ButtonContainer
               maxAllowed={1}
               buttons={["1", "2", "3", "4", "5"]}
+              onUpdateSelection={buttonTitle =>
+                this.onUpdateSelection(buttonTitle, "members")
+              }
             />
           </div>
           <button onClick={e => this.onSubmit(e)} type="submit">

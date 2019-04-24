@@ -8,7 +8,7 @@ class ButtonContainer extends React.Component {
     this.state = { countActive: 0, isMax: false };
   }
 
-  checkMax(num) {
+  checkMax(num, title) {
     this.setState(
       prevState => ({ countActive: prevState.countActive + num }),
       () => {
@@ -28,11 +28,11 @@ class ButtonContainer extends React.Component {
           <Button
             key={index}
             name={button}
-            checkMax={num => this.checkMax(num)}
+            checkMax={(num, title) => this.checkMax(num, title)}
             isMax={this.state.isMax}
             maxAllowed={this.props.maxAllowed}
-            isActive={this.state.isActive}
-            resetOtherButtons={() => this.resetOtherButtons()}
+            isActive={this.props.resetButtons ? false : ""}
+            onUpdateSelection={this.props.onUpdateSelection}
           />
         ))}
       </div>
@@ -43,23 +43,24 @@ class ButtonContainer extends React.Component {
 class Button extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isActive: false };
+    this.state = { isActive: this.props.isActive };
   }
 
   handleClick() {
     if (this.state.isActive) {
       this.setState({ isActive: false });
-      this.props.checkMax(-1);
+      this.props.checkMax(-1, this.props.name);
     } else if (!this.state.isActive && this.props.isMax !== true) {
       this.setState({ isActive: !this.state.isActive });
-      this.props.checkMax(1);
+      this.props.checkMax(1, this.props.name);
     }
+    this.props.onUpdateSelection(this.props.name);
   }
 
   render() {
     return (
       <div
-        onClick={() => this.handleClick(this.handleClick)}
+        onClick={() => this.handleClick()}
         className={classNames({
           customButton: true,
           customButtonActive: this.state.isActive

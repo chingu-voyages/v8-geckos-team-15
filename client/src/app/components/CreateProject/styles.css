@@ -1,11 +1,14 @@
 .form-wrapper {
   position: absolute;
   left: 25%;
+  top: 20%;
   margin: 15px;
   padding: 10px 25px;
   border: 1px solid #d6d6d6;
   box-shadow: 0 2px 8px 1px #d6d6d6;
   width: 50%;
+  background: white;
+  z-index: 10;
 }
 
 .form-wrapper h2 {
