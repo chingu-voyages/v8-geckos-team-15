@@ -1,0 +1,44 @@
+.container {
+  display: inline-block;
+}
+
+.options {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  min-width: 203px;
+  background: var(--gray);
+  box-shadow: 0 4px 16px rgba(20, 23, 28, 0.25);
+  border-radius: 2px;
+  margin: 2px 0 0;
+}
+.options.show {
+  display: block;
+}
+
+.item {
+  list-style: none;
+  padding: 8px 16px;
+  color: var(--black);
+  cursor: pointer;
+  display: block;
+}
+.item.selected {
+  background: var(--black);
+  color: var(--light-gray);
+}
+.item:hover {
+  background: var(--black);
+  color: var(--light-gray);
+}
+.item input {
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+}
+.item label {
+  cursor: pointer;
+}
+
+.active {
+  border: 1px solid var(--dark-gray);
+}

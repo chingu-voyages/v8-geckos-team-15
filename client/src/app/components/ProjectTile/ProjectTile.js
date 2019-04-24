@@ -1,20 +1,15 @@
 import React from "react";
 import "./project-tile.css";
-import ProjectTileLevel from "../projectTileLevel/ProjectTileLevel";
-import Members from "../members/Members";
-import Stack from "../projectTileStack/ProjectTileStack";
+import ProjectTileLevel from "./projectTileLevel/ProjectTileLevel";
+import Members from "./members/Members";
+import Stack from "./projectTileStack/ProjectTileStack";
 
 const formatDescription = description =>
   description.length > 80 ? description.substring(0, 100) + "..." : description;
 
-const ProjectTile = ({
-  title,
-  description,
-  level,
-  languages,
-  image,
-  members
-}) => {
+const ProjectTile = props => {
+  const { title, description, level, stack, image, members } = props.project;
+
   return (
     <div
       onClick={() => alert(title + " | " + description)}
@@ -32,7 +27,7 @@ const ProjectTile = ({
       </div>
       <div className="project-footer">
         <div className="stack-container">
-          <Stack languages={languages} />
+          <Stack stack={stack} />
         </div>
         <div className="levelAndMembers">
           <div className="level">

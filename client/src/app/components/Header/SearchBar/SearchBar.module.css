@@ -1,11 +1,8 @@
-@value gray: #f2f3f5;
-@value red: #ec5252;
-
 .container {
   width: 40vw;
   height: 35px;
   align-items: center;
-  border: 1px solid #e8e9eb;
+  border: 1px solid var(--gray);
   display: flex;
   justify-content: space-between;
 }
@@ -16,24 +13,24 @@
   padding: 0 10px;
   border: none;
   outline: none;
-  background: gray;
+  background: var(--light-gray);
 }
 .input:focus {
   background: white;
 }
 
 .button {
-  background: gray;
+  background: var(--light-gray);
   border: none;
   height: 100%;
   width: 50px;
   margin: 0;
   padding: 0;
-  color: red;
+  color: var(--red);
   cursor: pointer;
   outline: none;
 }
 .button:hover {
-  background: red;
+  background: var(--red);
   color: white;
 }
