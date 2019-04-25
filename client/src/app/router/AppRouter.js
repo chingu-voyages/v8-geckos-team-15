@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Home } from "../components/Home";
 import { Header } from "../components/Header/Header";
-import { Projects } from "../components/Projects/Projects";
+import Projects from "../components/Projects/Projects";
 
 export const AppRouter = () => (
   <BrowserRouter>

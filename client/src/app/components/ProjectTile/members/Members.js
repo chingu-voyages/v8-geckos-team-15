@@ -3,7 +3,7 @@ import React from "react";
 const maxMembers = 5;
 
 const createFilled = num => {
-  const elem = <i class="fas fa-user" />;
+  const elem = <i className="fas fa-user" />;
   const createArray = Array(num);
   createArray.fill(elem);
 
@@ -11,7 +11,7 @@ const createFilled = num => {
 };
 
 const createNonFilled = num => {
-  const elem = <i class="far fa-user" />;
+  const elem = <i className="far fa-user" />;
   const createArray = Array(num);
   createArray.fill(elem);
 

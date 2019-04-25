@@ -6,3 +6,16 @@ nav,
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+button {
+  outline: none;
+}
+
+:root {
+  --light-gray: #f2f3f5;
+  --gray: #e8e9eb;
+  --black: #29303b;
+  --dark-gray: #686f7a;
+  --red: #ec5252;
+  --light-red: #ec5252;
+}
