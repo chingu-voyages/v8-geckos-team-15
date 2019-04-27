@@ -11,7 +11,8 @@ class Form extends React.Component {
       descriptionValue: "",
       languages: [],
       complexity: "",
-      members: 0
+      members: 0,
+      reset: false
     };
   }
 
@@ -36,14 +37,19 @@ class Form extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    this.setState({
-      titleValue: "",
-      descriptionValue: "",
-      languages: [],
-      complexity: "",
-      members: 0,
-      resetButtons: true
-    });
+    this.setState(
+      () => ({
+        titleValue: "",
+        descriptionValue: "",
+        languages: [],
+        complexity: "",
+        members: 0,
+        reset: true
+      }),
+      () => {
+        this.setState({ reset: false });
+      }
+    );
   }
 
   render() {
@@ -98,6 +104,8 @@ class Form extends React.Component {
                 "Sass"
               ]}
               maxAllowed={5}
+              default="React"
+              reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "language")
               }
@@ -110,6 +118,8 @@ class Form extends React.Component {
             <ButtonContainer
               maxAllowed={1}
               buttons={["Beginner", "Intermediate", "Advance"]}
+              default="Beginner"
+              reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "complexity")
               }
@@ -123,6 +133,8 @@ class Form extends React.Component {
             <ButtonContainer
               maxAllowed={1}
               buttons={["1", "2", "3", "4", "5"]}
+              default="1"
+              reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "members")
               }
