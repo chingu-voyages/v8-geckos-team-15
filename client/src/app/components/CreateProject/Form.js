@@ -39,8 +39,8 @@ class Form extends React.Component {
     console.log(this.state);
     this.setState(
       () => ({
-        titleValue: "",
-        descriptionValue: "",
+        title: "",
+        description: "",
         languages: [],
         complexity: "",
         members: 0,
@@ -70,7 +70,7 @@ class Form extends React.Component {
               <span> What's your project going to be called?</span>
             </div>
             <input
-              value={this.state.titleValue}
+              value={this.state.title}
               onChange={e => this.onChangeInput(e)}
               type="text"
               name="project-title"
@@ -82,7 +82,7 @@ class Form extends React.Component {
             </div>
             <textarea
               name="project-description"
-              value={this.state.descriptionValue}
+              value={this.state.description}
               onChange={e => this.onChangeInput(e)}
               maxLength={1000}
             />
