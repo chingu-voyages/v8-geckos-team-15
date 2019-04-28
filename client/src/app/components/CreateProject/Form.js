@@ -28,10 +28,10 @@ class Form extends React.Component {
     }
   }
 
-  onChangeInput({ target }) {
-    target.name === "project-title"
-      ? this.setState({ name: target.value })
-      : this.setState({ description: target.value });
+  onChangeInput({ target: { name, value } }) {
+    name === "project-title"
+      ? this.setState({ name: value })
+      : this.setState({ description: value });
   }
 
   onSubmit(e) {

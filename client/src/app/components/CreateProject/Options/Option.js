@@ -9,9 +9,10 @@ class Option extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.isDefault === this.props.name) {
+    const { isDefault, name, checkMax } = this.props;
+    if (isDefault === name) {
       this.setState({ isActive: true });
-      this.props.checkMax(1, this.props.name);
+      checkMax(1, name);
     }
   }
 
@@ -24,12 +25,15 @@ class Option extends React.Component {
   }
 
   handleClick() {
+    const { name, checkMax, isMax } = this.props;
+    const { isActive } = this.state;
+
     if (this.state.isActive) {
       this.setState({ isActive: false });
-      this.props.checkMax(-1, this.props.name);
-    } else if (!this.state.isActive && this.props.isMax !== true) {
-      this.setState({ isActive: !this.state.isActive });
-      this.props.checkMax(1, this.props.name);
+      checkMax(-1, this.props.name);
+    } else if (!isActive && isMax !== true) {
+      this.setState({ isActive: !isActive });
+      checkMax(1, name);
     }
     this.props.onUpdateSelection(this.props.name);
   }
