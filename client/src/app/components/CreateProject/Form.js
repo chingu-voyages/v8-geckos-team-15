@@ -104,7 +104,7 @@ class Form extends React.Component {
                 "Sass"
               ]}
               maxAllowed={5}
-              isDefault={this.state.stack[0]}
+              defaultSelection={this.state.stack[0]}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "stack")
@@ -118,7 +118,7 @@ class Form extends React.Component {
             <OptionsContainer
               maxAllowed={1}
               options={["Beginner", "Intermediate", "Advance"]}
-              isDefault={this.state.level}
+              defaultSelection={this.state.level}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "level")
@@ -133,7 +133,7 @@ class Form extends React.Component {
             <OptionsContainer
               maxAllowed={1}
               options={["1", "2", "3", "4", "5"]}
-              isDefault={this.state.requiredTeamSize}
+              defaultSelection={this.state.requiredTeamSize}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "requiredTeamSize")

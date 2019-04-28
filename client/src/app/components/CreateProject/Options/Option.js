@@ -9,8 +9,8 @@ class Option extends React.Component {
   }
 
   componentDidMount() {
-    const { isDefault, name, checkMax } = this.props;
-    if (isDefault === name) {
+    const { defaultSelection, name, checkMax } = this.props;
+    if (defaultSelection === name) {
       this.setState({ isActive: true });
       checkMax(1, name);
     }

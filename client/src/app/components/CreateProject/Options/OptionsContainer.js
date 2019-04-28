@@ -29,7 +29,7 @@ class OptionsContainer extends React.Component {
   }
 
   render() {
-    const { options, onUpdateSelection, isDefault, reset } = this.props;
+    const { options, onUpdateSelection, defaultSelection, reset } = this.props;
     const { isMax } = this.state;
     return (
       <div className="buttons-container">
@@ -40,7 +40,7 @@ class OptionsContainer extends React.Component {
             checkMax={num => this.checkMax(num)}
             isMax={isMax}
             onUpdateSelection={onUpdateSelection}
-            isDefault={isDefault ? isDefault : ""}
+            defaultSelection={defaultSelection || ""}
             reset={reset}
           />
         ))}
