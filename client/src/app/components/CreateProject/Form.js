@@ -7,31 +7,31 @@ class Form extends React.Component {
     super(props);
 
     this.state = {
-      titleValue: "",
-      descriptionValue: "",
-      languages: [],
-      complexity: "",
-      members: 0,
+      name: "",
+      description: "",
+      stack: ["React"],
+      level: "Beginner",
+      requiredTeamSize: "1",
       reset: false
     };
   }
 
   onUpdateSelection(buttonTitle, type) {
-    if (type === "language") {
+    if (type === "stack") {
       this.setState(prevState => ({
-        languages: [...prevState.languages, buttonTitle]
+        stack: [...prevState.stack, buttonTitle]
       }));
-    } else if (type === "complexity") {
-      this.setState({ complexity: buttonTitle });
-    } else if (type === "members") {
-      this.setState({ members: buttonTitle });
+    } else if (type === "level") {
+      this.setState({ level: buttonTitle });
+    } else if (type === "requiredTeamSize") {
+      this.setState({ requiredTeamSize: buttonTitle });
     }
   }
 
   onChangeInput({ target }) {
     target.name === "project-title"
-      ? this.setState({ titleValue: target.value })
-      : this.setState({ descriptionValue: target.value });
+      ? this.setState({ name: target.value })
+      : this.setState({ description: target.value });
   }
 
   onSubmit(e) {
@@ -41,9 +41,9 @@ class Form extends React.Component {
       () => ({
         title: "",
         description: "",
-        languages: [],
-        complexity: "",
-        members: 0,
+        stack: [],
+        level: "",
+        requiredTeamSize: 0,
         reset: true
       }),
       () => {
@@ -104,10 +104,10 @@ class Form extends React.Component {
                 "Sass"
               ]}
               maxAllowed={5}
-              isDefault="React"
+              isDefault={this.state.stack[0]}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "language")
+                this.onUpdateSelection(buttonTitle, "stack")
               }
             />
           </div>
@@ -118,10 +118,10 @@ class Form extends React.Component {
             <OptionsContainer
               maxAllowed={1}
               options={["Beginner", "Intermediate", "Advance"]}
-              isDefault="Beginner"
+              isDefault={this.state.level}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "complexity")
+                this.onUpdateSelection(buttonTitle, "level")
               }
             />
           </div>
@@ -133,10 +133,10 @@ class Form extends React.Component {
             <OptionsContainer
               maxAllowed={1}
               options={["1", "2", "3", "4", "5"]}
-              isDefault="1"
+              isDefault={this.state.requiredTeamSize}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "members")
+                this.onUpdateSelection(buttonTitle, "requiredTeamSize")
               }
             />
           </div>
