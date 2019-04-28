@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonContainer from "../Button/Button";
+import OptionsContainer from "./Options/OptionsContainer";
 import "./styles.css";
 
 class Form extends React.Component {
@@ -28,10 +28,10 @@ class Form extends React.Component {
     }
   }
 
-  onChangeInput(e) {
-    e.target.name === "project-title"
-      ? this.setState({ titleValue: e.target.value })
-      : this.setState({ descriptionValue: e.target.value });
+  onChangeInput({ target }) {
+    target.name === "project-title"
+      ? this.setState({ titleValue: target.value })
+      : this.setState({ descriptionValue: target.value });
   }
 
   onSubmit(e) {
@@ -91,8 +91,8 @@ class Form extends React.Component {
             <div className="title">
               Languages <span> Pick up to 5</span>
             </div>
-            <ButtonContainer
-              buttons={[
+            <OptionsContainer
+              options={[
                 "React",
                 "React Native",
                 "Angular",
@@ -104,7 +104,7 @@ class Form extends React.Component {
                 "Sass"
               ]}
               maxAllowed={5}
-              default="React"
+              isDefault="React"
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "language")
@@ -115,10 +115,10 @@ class Form extends React.Component {
             <div className="title">
               Complexity <span> How hard will your project be?</span>
             </div>
-            <ButtonContainer
+            <OptionsContainer
               maxAllowed={1}
-              buttons={["Beginner", "Intermediate", "Advance"]}
-              default="Beginner"
+              options={["Beginner", "Intermediate", "Advance"]}
+              isDefault="Beginner"
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "complexity")
@@ -130,10 +130,10 @@ class Form extends React.Component {
               Members{" "}
               <span> How many people do you think the project will need?</span>
             </div>
-            <ButtonContainer
+            <OptionsContainer
               maxAllowed={1}
-              buttons={["1", "2", "3", "4", "5"]}
-              default="1"
+              options={["1", "2", "3", "4", "5"]}
+              isDefault="1"
               reset={this.state.reset}
               onUpdateSelection={buttonTitle =>
                 this.onUpdateSelection(buttonTitle, "members")

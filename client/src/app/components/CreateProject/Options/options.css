@@ -9,14 +9,11 @@
   color: white;
   border-radius: 3px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .customButtonActive {
   background: #ec5252;
-}
-
-.customButton:hover {
-  cursor: pointer;
 }
 
 .buttons-container {
