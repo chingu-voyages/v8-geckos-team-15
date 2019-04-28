@@ -1,0 +1,22 @@
+.customButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 8px;
+  margin: 2px;
+  background: #9d9d9d;
+  color: white;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.customButtonActive {
+  background: #ec5252;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+}
