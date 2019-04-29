@@ -10,6 +10,10 @@ const dbPassword = process.env.dbPassword;
 
 const URI = `mongodb://user1:${dbPassword}@ds111455.mlab.com:11455/v8-chingu-geckos-15`;
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
+
 mongoose
   .connect(URI, { useNewUrlParser: true })
   .then(res => console.log("Ready to use database!"))
@@ -20,8 +24,6 @@ app.use(bodyParser.json());
 app.use("/users", users);
 //project routes
 app.use("/projects", projects);
-
-app.get("/", (req, res) => res.send("Hello World!"));
 
 app.listen(port, () =>
   console.log(`
