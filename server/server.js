@@ -4,7 +4,7 @@ const app = express();
 const users = require("./routes/users");
 const projects = require("./routes/projects");
 const bodyParser = require("body-parser");
-const port = 4000;
+const port = process.env.PORT || 4000;
 require("dotenv").config();
 const dbPassword = process.env.dbPassword;
 
