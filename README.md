@@ -18,4 +18,4 @@ Add-project-description-here | Voyage-8 | https://chingu.io/
 
 ### Getting started
 
-- create a file `server/.env` following the example of `.env-sample`, and replace the values actual secret values
+- create a file `server/.env` following the example of `.env-sample`, and replace the example values with actual secret values
