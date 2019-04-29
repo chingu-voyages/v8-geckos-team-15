@@ -8,7 +8,6 @@ const port = 4000;
 require("dotenv").config();
 const dbPassword = process.env.dbPassword;
 
-console.log(dbPassword);
 const URI = `mongodb://user1:${dbPassword}@ds111455.mlab.com:11455/v8-chingu-geckos-15`;
 
 mongoose
