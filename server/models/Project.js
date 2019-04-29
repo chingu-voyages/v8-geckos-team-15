@@ -20,21 +20,15 @@ const ProjectSchema = new Schema({
     required: true
   },
   requiredTeamSize: {
-    type: Number,
-    equired: true
-  },
-  createdBy: {
-    type: ObjectId,
+    type: String,
     required: true
   },
-  members: [ObjectId],
-  freeSpaces: Number,
   creationDate: { type: Date, default: Date.now }
 });
 
-ProjectSchema.methods.updateMembersArray = function(newMember) {
-  this.freeSpaces = this.requiredTeamSize - this.members.length;
-};
+// ProjectSchema.methods.updateMembersArray = function(newMember) {
+//   this.freeSpaces = this.requiredTeamSize - this.members.length;
+// };
 
 const Project = mongoose.model("Project", ProjectSchema);
 

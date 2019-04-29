@@ -36,17 +36,37 @@ class Form extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+
+    fetch("http://localhost:3000/projects/createProject", {
+      method: "POST",
+      body: JSON.stringify(this.state),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          response
+            .json()
+            .then(json => {
+              console.log(json);
+            })
+            .catch(e => console.log("Error: " + e));
+        }
+      })
+      .catch(error => console.log("Error:", error));
+
     this.setState(
       () => ({
-        title: "",
         description: "",
+        name: "",
         stack: [],
         level: "",
         requiredTeamSize: 0,
         reset: true
       }),
       () => {
+        console.log(this.state);
         this.setState({ reset: false });
       }
     );
@@ -106,9 +126,7 @@ class Form extends React.Component {
               maxAllowed={5}
               defaultSelection={this.state.stack[0]}
               reset={this.state.reset}
-              onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "stack")
-              }
+              onUpdateSelection={buttonTitle => this.onUpdateSelection(buttonTitle, "stack")}
             />
           </div>
           <div className="complexity-input-wrapper form-item">
@@ -120,15 +138,12 @@ class Form extends React.Component {
               options={["Beginner", "Intermediate", "Advance"]}
               defaultSelection={this.state.level}
               reset={this.state.reset}
-              onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "level")
-              }
+              onUpdateSelection={buttonTitle => this.onUpdateSelection(buttonTitle, "level")}
             />
           </div>
           <div className="members-input-wrapper form-item">
             <div className="title">
-              Members{" "}
-              <span> How many people do you think the project will need?</span>
+              Members <span> How many people do you think the project will need?</span>
             </div>
             <OptionsContainer
               maxAllowed={1}
