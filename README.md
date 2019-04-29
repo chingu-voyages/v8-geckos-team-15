@@ -6,7 +6,7 @@ Add-project-description-here | Voyage-8 | https://chingu.io/
 
 - `cd client && npm start` - start frontend on localhost 3000
 - `cd server && npm start` - start backend and db on localhost 4000
-- `npm run dev` - starts both backend and frontend
+- `cd server && npm run dev` - starts both backend and frontend
 
 ### Code format
 
@@ -15,3 +15,7 @@ Add-project-description-here | Voyage-8 | https://chingu.io/
 ### Styling
 
 - [`css modules`](https://github.com/css-modules/css-modules) - for scoped CSS with useful extra features (variables, composing)
+
+### Getting started
+
+- create a file `server/.env` following the example of `.env-sample`, and replace the values actual secret values
