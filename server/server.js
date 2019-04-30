@@ -11,7 +11,7 @@ const dbPassword = process.env.dbPassword;
 const URI = `mongodb://user1:${dbPassword}@ds111455.mlab.com:11455/v8-chingu-geckos-15`;
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static(path.join(__dirname, "/client/build")));
 }
 
 mongoose
