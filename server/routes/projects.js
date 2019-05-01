@@ -4,7 +4,7 @@ const { Project } = require("../models/Project");
 const { User } = require("../models/User");
 
 //get all projects
-router.get("/allProjects", (req, res) => {
+router.get("/", (req, res) => {
   Project.find()
     .then(project => res.send(project))
     .catch(e => res.send("Project not found"));
