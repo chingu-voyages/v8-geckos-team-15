@@ -4,8 +4,10 @@ const app = express();
 const users = require("./routes/users");
 const projects = require("./routes/projects");
 const bodyParser = require("body-parser");
-const { dbPassword } = require("./config");
 const port = 4000;
+require("dotenv").config();
+const dbPassword = process.env.dbPassword;
+
 const URI = `mongodb://user1:${dbPassword}@ds111455.mlab.com:11455/v8-chingu-geckos-15`;
 
 mongoose
