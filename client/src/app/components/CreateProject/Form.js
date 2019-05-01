@@ -45,16 +45,9 @@ class Form extends React.Component {
       }
     })
       .then(response => {
-        if (response.ok) {
-          response
-            .json()
-            .then(json => {
-              console.log(json);
-            })
-            .catch(e => console.log("Error: " + e));
-        }
+        response.json().then(res => console.log(res));
       })
-      .catch(error => console.log("Error:", error));
+      .catch(e => console.log("There was an error with the fetch request"));
 
     this.setState(
       () => ({
@@ -66,7 +59,6 @@ class Form extends React.Component {
         reset: true
       }),
       () => {
-        console.log(this.state);
         this.setState({ reset: false });
       }
     );
@@ -90,7 +82,7 @@ class Form extends React.Component {
               <span> What's your project going to be called?</span>
             </div>
             <input
-              value={this.state.title}
+              value={this.state.name}
               onChange={e => this.onChangeInput(e)}
               type="text"
               name="project-title"

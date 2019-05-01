@@ -67,8 +67,19 @@ router.post("/createProject", (req, res) => {
   const newProject = new Project(data);
   newProject
     .save()
-    .then(project => res.send({ success: "Project created", project }))
-    .catch(e => res.send("There was an error creating the project: " + e));
+    .then(project =>
+      res.status(200).send({
+        success: true,
+        project
+      })
+    )
+    .catch(({ errors }) =>
+      res.status(400).send({
+        success: false,
+        error: "There was an error creating the project",
+        errorDetail: errors
+      })
+    );
 });
 
 module.exports = router;
