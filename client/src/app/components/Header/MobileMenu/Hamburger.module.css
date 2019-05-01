@@ -46,7 +46,7 @@
 /* Side menu styling */
 .sideMenu {
   position: absolute;
-  top: 90px;
+  top: 87px;
   left: 0;
   width: 300px;
   background: white;
@@ -57,10 +57,13 @@
 @media screen and (max-width: 800px) {
   .sideMenu {
     display: block;
+    min-height: 200px;
+    z-index: 1;
+    box-shadow: 3px 4px 6px 1px #00000040;
   }
 
   .sideMenu.hide {
-    left: -300px;
+    left: -305px;
   }
 
   .nav {

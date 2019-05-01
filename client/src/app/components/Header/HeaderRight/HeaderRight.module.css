@@ -20,6 +20,9 @@
   box-sizing: border-box;
   border: 1px solid transparent;
 }
+.list a {
+  text-decoration: none;
+}
 .list li:hover {
   background: #f2f3f5;
   border: 1px solid #e8e9eb;
