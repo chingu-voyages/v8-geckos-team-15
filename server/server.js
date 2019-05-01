@@ -4,14 +4,14 @@ const app = express();
 const users = require("./routes/users");
 const projects = require("./routes/projects");
 const bodyParser = require("body-parser");
-const port = 4000;
+const port = process.env.PORT || 4000;
 require("dotenv").config();
 const dbPassword = process.env.dbPassword;
 
 const URI = `mongodb://user1:${dbPassword}@ds111455.mlab.com:11455/v8-chingu-geckos-15`;
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static(path.join(__dirname, "/client/build")));
 }
 
 mongoose

@@ -1,6 +1,6 @@
 import React from "react";
 import "./options.css";
-const classNames = require("classnames");
+import classNames from "classnames";
 
 class Option extends React.Component {
   constructor(props) {
