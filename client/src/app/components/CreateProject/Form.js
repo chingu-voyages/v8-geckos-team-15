@@ -44,10 +44,16 @@ class Form extends React.Component {
         "Content-Type": "application/json"
       }
     })
-      .then(response => {
-        response.json().then(res => console.log(res));
+      .then(response => response.json())
+      .then(jsonRes => {
+        if (jsonRes.success) {
+          console.log(jsonRes);
+        }
+        throw Error(jsonRes.error);
       })
-      .catch(e => console.log("There was an error with the fetch request"));
+      .catch(error => {
+        console.log(error.message);
+      });
 
     this.setState(
       () => ({
