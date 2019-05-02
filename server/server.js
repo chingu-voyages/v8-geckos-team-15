@@ -21,9 +21,9 @@ mongoose
 
 app.use(bodyParser.json());
 //user routes
-app.use("/users", users);
+app.use("/api/users", users);
 //project routes
-app.use("/projects", projects);
+app.use("/api/projects", projects);
 
 app.listen(port, () =>
   console.log(`

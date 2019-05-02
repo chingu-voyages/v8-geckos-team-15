@@ -37,7 +37,7 @@ class Form extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3000/projects/createProject", {
+    fetch("/api/projects/createProject", {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {

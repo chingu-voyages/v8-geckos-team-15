@@ -5,7 +5,7 @@ import "./global-style.css";
 
 class App extends Component {
   componentDidMount() {
-    fetch("/projects")
+    fetch("/api/projects")
       .then(data => {
         if (data.status === 200) {
           return data.json();
