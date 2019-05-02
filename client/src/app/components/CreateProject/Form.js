@@ -106,9 +106,7 @@ class Form extends React.Component {
               maxAllowed={5}
               defaultSelection={this.state.stack[0]}
               reset={this.state.reset}
-              onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "stack")
-              }
+              onUpdateSelection={buttonTitle => this.onUpdateSelection(buttonTitle, "stack")}
             />
           </div>
           <div className="complexity-input-wrapper form-item">
@@ -120,15 +118,12 @@ class Form extends React.Component {
               options={["Beginner", "Intermediate", "Advance"]}
               defaultSelection={this.state.level}
               reset={this.state.reset}
-              onUpdateSelection={buttonTitle =>
-                this.onUpdateSelection(buttonTitle, "level")
-              }
+              onUpdateSelection={buttonTitle => this.onUpdateSelection(buttonTitle, "level")}
             />
           </div>
           <div className="members-input-wrapper form-item">
             <div className="title">
-              Members{" "}
-              <span> How many people do you think the project will need?</span>
+              Members <span> How many people do you think the project will need?</span>
             </div>
             <OptionsContainer
               maxAllowed={1}
@@ -140,7 +135,7 @@ class Form extends React.Component {
               }
             />
           </div>
-          <button onClick={e => this.onSubmit(e)} type="submit">
+          <button className="create-button" onClick={e => this.onSubmit(e)} type="submit">
             Create
           </button>
         </form>

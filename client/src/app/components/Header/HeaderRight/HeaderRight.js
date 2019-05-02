@@ -12,6 +12,9 @@ const HeaderRight = ({ direction }) => (
       <li>
         <Link to="/about-us">About Us</Link>
       </li>
+      <li className={styles.ctaButton}>
+        <Link to="/create-project">Create Project</Link>
+      </li>
     </ul>
   </div>
 );

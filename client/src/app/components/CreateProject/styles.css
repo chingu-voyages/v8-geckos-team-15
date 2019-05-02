@@ -1,7 +1,7 @@
 .form-wrapper {
   position: absolute;
   left: 25%;
-  top: 20%;
+  top: 130px;
   margin: 15px;
   padding: 10px 25px;
   border: 1px solid #d6d6d6;
@@ -40,18 +40,28 @@
 }
 
 .form-wrapper button {
-  padding: 5px;
-  margin: 10px;
+  border: none;
+  height: 35px;
+  width: 75px;
+  padding: 8px;
+  margin: 2px;
+  background: #ec5252;
+  border: 1px solid #e8e9eb;
+  color: white;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  float: right;
+}
+
+.form-wrapper button:hover {
+  background: #b33b3b;
 }
 
 .form-wrapper textarea {
   resize: none;
   height: 100px;
-}
-
-.form-wrapper .button {
-  font-size: 14px;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {

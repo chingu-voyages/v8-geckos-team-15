@@ -22,6 +22,7 @@
 }
 .list a {
   text-decoration: none;
+  color: var(--dark-gray);
 }
 .list li:hover {
   background: #f2f3f5;
@@ -30,4 +31,19 @@
 
 .vertical li {
   border-bottom: 1px solid #e8e9eb;
+}
+
+.ctaButton {
+  cursor: pointer;
+  background: #ec5252;
+  border-radius: 3px;
+  border: none;
+}
+
+.ctaButton a {
+  color: white;
+}
+
+.list .ctaButton:hover {
+  background: #b33b3b;
 }
