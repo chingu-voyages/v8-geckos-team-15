@@ -4,17 +4,17 @@ import Dropdown from "./Dropdown/Dropdown";
 import Button from "./Button/Button";
 
 const teckStackValues = [
-  "javascript",
-  "react",
-  "mongodb",
-  "nodejs",
-  "angularjs",
-  "css3",
-  "html5",
-  "webpack"
+  "React",
+  "React Native",
+  "Angular",
+  "NodeJS",
+  "MongoDB",
+  "VueJS",
+  "HTML5",
+  "CSS3",
+  "Sass"
 ];
-const levelValues = [1, 2, 3];
-const levelLabels = ["Beginner", "Intermediate", "Advanced"];
+const levelValues = ["Beginner", "Intermediate", "Advanced"];
 
 class Filters extends Component {
   handleTechStackChange = newOptions => {
@@ -43,12 +43,7 @@ class Filters extends Component {
           changeCallback={this.handleTechStackChange}
         />
 
-        <Dropdown
-          text="Level"
-          options={levelValues}
-          labels={levelLabels}
-          changeCallback={this.handleLevelChange}
-        />
+        <Dropdown text="Level" options={levelValues} changeCallback={this.handleLevelChange} />
 
         <Button icon="filter">More filters</Button>
       </div>

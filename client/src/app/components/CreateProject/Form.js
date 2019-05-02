@@ -47,7 +47,7 @@ class Form extends React.Component {
       .then(response => response.json())
       .then(jsonRes => {
         if (jsonRes.success) {
-          console.log(jsonRes);
+          console.log(jsonRes.project);
         }
         throw Error(jsonRes.error);
       })
@@ -133,7 +133,7 @@ class Form extends React.Component {
             </div>
             <OptionsContainer
               maxAllowed={1}
-              options={["Beginner", "Intermediate", "Advance"]}
+              options={["Beginner", "Intermediate", "Advanced"]}
               defaultSelection={this.state.level}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle => this.onUpdateSelection(buttonTitle, "level")}

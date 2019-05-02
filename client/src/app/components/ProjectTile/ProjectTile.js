@@ -8,23 +8,18 @@ const formatDescription = description =>
   description.length > 80 ? description.substring(0, 100) + "..." : description;
 
 const ProjectTile = props => {
-  const { title, description, level, stack, image, members } = props.project;
+  const { name, description, level, stack, image = "#", requiredTeamSize } = props.project;
 
   return (
-    <div
-      onClick={() => alert(title + " | " + description)}
-      className="project-container"
-    >
+    <div onClick={() => alert(name + " | " + description)} className="project-container">
       <div
         className="project-image"
         style={{
           backgroundImage: `url(${image})`
         }}
       />
-      <div className="project-title">{title}</div>
-      <div className="project-description">
-        {formatDescription(description)}
-      </div>
+      <div className="project-title">{name}</div>
+      <div className="project-description">{formatDescription(description)}</div>
       <div className="project-footer">
         <div className="stack-container">
           <Stack stack={stack} />
@@ -33,7 +28,7 @@ const ProjectTile = props => {
           <div className="level">
             <ProjectTileLevel level={level} />
           </div>
-          <Members members={members} />
+          <Members members={+requiredTeamSize} />
         </div>
       </div>
     </div>
