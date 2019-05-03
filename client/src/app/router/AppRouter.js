@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Home } from "../components/Home";
 import { Header } from "../components/Header/Header";
 import Projects from "../components/Projects/Projects";
+import AboutUs from "../components/AboutUs/AboutUs";
 
 export const AppRouter = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ export const AppRouter = () => (
       <Switch>
         <Route path="/" component={Home} exact={true} />
         <Route path="/projects" component={Projects} />
+        <Route path="/about-us" component={AboutUs} />
         {/*
         To add more routes you can repeat the pattern as above. For example..
         <Route path="/footer" component={Footer} />
