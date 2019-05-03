@@ -43,20 +43,23 @@
   border: none;
   height: 35px;
   width: 75px;
-  padding: 8px;
-  margin: 2px;
   background: #ec5252;
-  border: 1px solid #e8e9eb;
   color: white;
   border-radius: 3px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  float: right;
+  margin-left: 5px;
 }
 
 .form-wrapper button:hover {
   background: #b33b3b;
+}
+
+.form-wrapper .create-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form-wrapper textarea {
