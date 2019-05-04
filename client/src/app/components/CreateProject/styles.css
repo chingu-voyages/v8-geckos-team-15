@@ -1,0 +1,75 @@
+.form-wrapper {
+  position: absolute;
+  left: 25%;
+  top: 130px;
+  margin: 15px;
+  padding: 10px 25px;
+  border: 1px solid #d6d6d6;
+  box-shadow: 0 2px 8px 1px #d6d6d6;
+  width: 50%;
+  background: white;
+  z-index: 10;
+}
+
+.form-wrapper h2 {
+  padding: 0;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 20px;
+  padding-bottom: 15px;
+  color: #00576b;
+  text-transform: uppercase;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  margin: 5px;
+}
+
+.form-wrapper span {
+  font-size: 12px;
+  color: grey;
+  font-weight: 300;
+}
+
+.form-wrapper .title {
+  color: rgb(32, 30, 30);
+  font-weight: bold;
+}
+
+.form-wrapper button {
+  border: none;
+  height: 35px;
+  width: 75px;
+  background: #ec5252;
+  color: white;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.form-wrapper button:hover {
+  background: #b33b3b;
+}
+
+.form-wrapper .create-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-wrapper textarea {
+  resize: none;
+  height: 100px;
+}
+
+@media screen and (max-width: 992px) {
+  .form-wrapper {
+    width: 80%;
+    left: 10%;
+  }
+}

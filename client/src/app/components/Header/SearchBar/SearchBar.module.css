@@ -1,0 +1,36 @@
+.container {
+  width: 40vw;
+  height: 35px;
+  align-items: center;
+  border: 1px solid var(--gray);
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background: var(--light-gray);
+}
+.input:focus {
+  background: white;
+}
+
+.button {
+  background: var(--light-gray);
+  border: none;
+  height: 100%;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+  color: var(--red);
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {
+  background: var(--red);
+  color: white;
+}

@@ -1,0 +1,49 @@
+.container {
+  padding: 15px;
+}
+
+.list {
+  display: flex;
+  list-style-type: none;
+}
+.list.horizontal {
+  flex-direction: row;
+}
+.list.vertical {
+  flex-direction: column;
+}
+
+.list li {
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.list a {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+.list li:hover {
+  background: #f2f3f5;
+  border: 1px solid #e8e9eb;
+}
+
+.vertical li {
+  border-bottom: 1px solid #e8e9eb;
+}
+
+.ctaButton {
+  cursor: pointer;
+  background: #ec5252;
+  border-radius: 3px;
+  border: none;
+}
+
+.ctaButton a {
+  color: white;
+}
+
+.list .ctaButton:hover {
+  background: #b33b3b;
+}
