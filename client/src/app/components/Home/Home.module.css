@@ -1,0 +1,15 @@
+.title {
+  margin: 20px 15px 10px;
+  font-size: 26px;
+  color: var(--black);
+  font-weight: 100;
+  text-align: center;
+}
+
+.subTitle {
+  margin: 0 15px 5px;
+  font-size: 20px;
+  color: var(--black);
+  font-weight: 100;
+  text-align: center;
+}
