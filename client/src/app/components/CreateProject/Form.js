@@ -147,9 +147,11 @@ class Form extends React.Component {
               }
             />
           </div>
-          <button onClick={e => this.onSubmit(e)} type="submit">
-            Create
-          </button>
+          <div className="create-button">
+            <button onClick={e => this.onSubmit(e)} type="submit">
+              Create
+            </button>
+          </div>
         </form>
       </div>
     );
