@@ -1,16 +1,12 @@
 # v8-geckos-team-15
+
 # Project Code
+
 ## A place for developers to find others to code with
 
 Check it out here: https://project-code.herokuapp.com/
 
 ---
-
-A place for developers to find others to code with | Voyage-8 | https://chingu.io/
-
-### Link to Webapp
-
-- https://project-code.herokuapp.com/
 
 ### Available Scripts
 
