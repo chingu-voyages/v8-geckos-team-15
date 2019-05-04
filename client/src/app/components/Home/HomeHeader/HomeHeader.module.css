@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  background: var(--light-gray);
+  padding: 20px;
+  justify-content: space-around;
+  font-size: 18px;
+  color: var(--gray);
+  padding: 25px 15px;
+  border: 1px solid var(--gray);
+}
+.step {
+  list-style: none;
+  margin-right: 20px;
+  padding: 10px;
+  background: var(--red);
+  box-shadow: 1px 2px 3px 1px #adadad9c;
+}

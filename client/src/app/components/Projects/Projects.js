@@ -14,7 +14,6 @@ class Projects extends Component {
       .then(response => response.json())
       .then(jsonRes => {
         if (jsonRes.success) {
-          console.log(jsonRes.projects);
           this.setState({ projects: jsonRes.projects });
         } else {
           throw Error(jsonRes.error);

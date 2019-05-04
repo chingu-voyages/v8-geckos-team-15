@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Home } from "../components/Home";
+import { Home } from "../components/Home/Home";
 import { Header } from "../components/Header/Header";
 import Form from "../components/CreateProject/Form";
 import Projects from "../components/Projects/Projects";
