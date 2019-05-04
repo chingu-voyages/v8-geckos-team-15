@@ -37,17 +37,24 @@ class Form extends React.Component {
   onSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3000/projects/createProject", {
+    fetch("/api/projects/createProject", {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json"
       }
     })
-      .then(response => {
-        response.json().then(res => console.log(res));
+      .then(response => response.json())
+      .then(jsonRes => {
+        if (jsonRes.success) {
+          alert("Project created successfuly!");
+        } else {
+          throw Error(jsonRes.error);
+        }
       })
-      .catch(e => console.log("There was an error with the fetch request"));
+      .catch(error => {
+        console.log(error.message);
+      });
 
     this.setState(
       () => ({
@@ -127,7 +134,7 @@ class Form extends React.Component {
             </div>
             <OptionsContainer
               maxAllowed={1}
-              options={["Beginner", "Intermediate", "Advance"]}
+              options={["Beginner", "Intermediate", "Advanced"]}
               defaultSelection={this.state.level}
               reset={this.state.reset}
               onUpdateSelection={buttonTitle => this.onUpdateSelection(buttonTitle, "level")}

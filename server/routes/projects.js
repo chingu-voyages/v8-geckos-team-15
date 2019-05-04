@@ -6,8 +6,19 @@ const { User } = require("../models/User");
 //get all projects
 router.get("/", (req, res) => {
   Project.find()
-    .then(project => res.send(project))
-    .catch(e => res.send("Project not found"));
+    .then(projects =>
+      res.status(200).send({
+        success: true,
+        projects
+      })
+    )
+    .catch(({ errors }) =>
+      res.status(400).send({
+        success: false,
+        error: "There was an error getting the projects",
+        errorDetail: errors
+      })
+    );
 });
 
 //get project by id

@@ -3,6 +3,7 @@
 /server/node_modules
 /server/.env
 config.js
+*.log
 
 # production
 /client/build
