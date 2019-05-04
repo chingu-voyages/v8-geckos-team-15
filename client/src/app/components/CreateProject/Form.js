@@ -32,7 +32,6 @@ class Form extends React.Component {
     } else if (type === "requiredTeamSize") {
       this.setState({ requiredTeamSize: buttonTitle });
     }
-    console.log(this.state);
   }
 
   onChangeInput({ target: { name, value } }) {
