@@ -17,7 +17,6 @@ const ProjectTile = props => {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEqAakMhE-U_ikIlk90Xxw34VDWl2tMHqUJsyekDytH72x4OuIkw"
     ];
     const randomNumber = Math.floor(Math.random() * 4 + 1);
-    console.log(randomNumber);
     return images[randomNumber - 1];
   };
   return (
