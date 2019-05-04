@@ -9,7 +9,7 @@ const AboutUs = () => (
       <div className="header2">
         Welcome! <br /> We're a small group of developers who teamed up to create something we
         thought was needed: <br />
-        <span>A place for developers find others to code with!</span>
+        <span>A place that developers can find others to code with!</span>
         <br /> This started as our Chingu project in 2019 and we are proud to have made it happen!
       </div>
     </div>
