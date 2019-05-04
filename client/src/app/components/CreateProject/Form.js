@@ -17,8 +17,9 @@ class Form extends React.Component {
   }
 
   onUpdateSelection(buttonTitle, type) {
+    const { stack } = this.state;
     if (type === "stack") {
-      if (this.state.stack.indexOf(buttonTitle) === -1 && this.state.stack.length < 5) {
+      if (!stack.includes(buttonTitle) && stack.length < 5) {
         this.setState(prevState => ({
           stack: [...prevState.stack, buttonTitle]
         }));
@@ -119,10 +120,13 @@ class Form extends React.Component {
             <OptionsContainer
               options={[
                 "React",
-                "React Native",
-                "Angular",
+                "Javascript",
+                "Python",
+                "PHP",
+                "AngularJS",
                 "NodeJS",
                 "MongoDB",
+                "Gatsby",
                 "VueJS",
                 "HTML5",
                 "CSS3",
