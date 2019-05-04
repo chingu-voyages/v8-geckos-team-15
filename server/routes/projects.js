@@ -23,34 +23,63 @@ router.get("/:projectId", (req, res) => {
 });
 
 //create project
-router.post("/:userId", (req, res) => {
-  User.findById(req.params.userId).then(user => {
-    if (!user) {
-      return res.send("User does not exist");
-    }
-  });
+// router.post("/:userId", (req, res) => {
+//   User.findById(req.params.userId).then(user => {
+//     if (!user) {
+//       return res.send("User does not exist");
+//     }
+//   });
+//   const data = {
+//     name: req.body.name,
+//     level: req.body.level,
+//     stack: req.body.stack,
+//     requiredTeamSize: req.body.requiredTeamSize,
+
+//     description: req.body.description,
+//     createdBy: req.params.userId
+//   };
+
+//   const newProject = new Project(data);
+//   //newProject.updateMembersArray();
+//   newProject
+//     .save()
+//     .then(doc => {
+//       User.findOneAndUpdate(data.createdBy, {
+//         $addToSet: { memberOf: doc._id }
+//       })
+//         .then(project => res.send({ sucess: "Project created", ...doc._doc }))
+//         .catch(e => res.send("User not found"));
+//     })
+//     .catch(e => res.send(e));
+// });
+
+//Create project without user
+
+router.post("/createProject", (req, res) => {
   const data = {
     name: req.body.name,
     level: req.body.level,
     stack: req.body.stack,
     requiredTeamSize: req.body.requiredTeamSize,
-    members: [req.params.userId],
-    description: req.body.description,
-    createdBy: req.params.userId
+    description: req.body.description
   };
 
   const newProject = new Project(data);
-  newProject.updateMembersArray();
   newProject
     .save()
-    .then(doc => {
-      User.findOneAndUpdate(data.createdBy, {
-        $addToSet: { memberOf: doc._id }
+    .then(project =>
+      res.status(200).send({
+        success: true,
+        project
       })
-        .then(project => res.send({ sucess: "Project created", ...doc._doc }))
-        .catch(e => res.send("User not found"));
-    })
-    .catch(e => res.send(e));
+    )
+    .catch(({ errors }) =>
+      res.status(400).send({
+        success: false,
+        error: "There was an error creating the project",
+        errorDetail: errors
+      })
+    );
 });
 
 module.exports = router;

@@ -36,11 +36,23 @@ class Form extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
+
+    fetch("http://localhost:3000/projects/createProject", {
+      method: "POST",
+      body: JSON.stringify(this.state),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => {
+        response.json().then(res => console.log(res));
+      })
+      .catch(e => console.log("There was an error with the fetch request"));
+
     this.setState(
       () => ({
-        title: "",
         description: "",
+        name: "",
         stack: [],
         level: "",
         requiredTeamSize: 0,
@@ -70,7 +82,7 @@ class Form extends React.Component {
               <span> What's your project going to be called?</span>
             </div>
             <input
-              value={this.state.title}
+              value={this.state.name}
               onChange={e => this.onChangeInput(e)}
               type="text"
               name="project-title"
