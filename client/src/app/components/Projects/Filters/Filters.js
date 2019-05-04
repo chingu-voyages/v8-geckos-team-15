@@ -2,18 +2,8 @@ import React, { Component } from "react";
 import styles from "./Filters.module.css";
 import Dropdown from "./Dropdown/Dropdown";
 import Button from "./Button/Button";
+import teckStackValues from "../techStackChoices";
 
-const teckStackValues = [
-  "React",
-  "React Native",
-  "Angular",
-  "NodeJS",
-  "MongoDB",
-  "VueJS",
-  "HTML5",
-  "CSS3",
-  "Sass"
-];
 const levelValues = ["Beginner", "Intermediate", "Advanced"];
 
 class Filters extends Component {

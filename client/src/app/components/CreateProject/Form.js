@@ -1,5 +1,6 @@
 import React from "react";
 import OptionsContainer from "./Options/OptionsContainer";
+import teckStackValues from "../Projects/techStackChoices";
 import "./styles.css";
 
 class Form extends React.Component {
@@ -118,20 +119,7 @@ class Form extends React.Component {
               Languages <span> Pick up to 5</span>
             </div>
             <OptionsContainer
-              options={[
-                "React",
-                "Javascript",
-                "Python",
-                "PHP",
-                "AngularJS",
-                "NodeJS",
-                "MongoDB",
-                "Gatsby",
-                "VueJS",
-                "HTML5",
-                "CSS3",
-                "Sass"
-              ]}
+              options={teckStackValues}
               maxAllowed={5}
               defaultSelection={this.state.stack[0]}
               reset={this.state.reset}
