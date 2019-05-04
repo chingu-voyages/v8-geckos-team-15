@@ -46,19 +46,19 @@
 /* Side menu styling */
 .sideMenu {
   position: absolute;
-  top: 87px;
+  top: 85px;
   left: 0;
   width: 300px;
   background: white;
   display: none;
   transition: left 0.5s ease-in-out;
+  z-index: 99;
 }
 
 @media screen and (max-width: 800px) {
   .sideMenu {
     display: block;
     min-height: 200px;
-    z-index: 1;
     box-shadow: 3px 4px 6px 1px #00000040;
   }
 
