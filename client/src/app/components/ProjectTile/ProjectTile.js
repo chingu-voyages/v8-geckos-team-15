@@ -9,7 +9,6 @@ const formatDescription = description =>
 
 const ProjectTile = props => {
   const { name, description, level, stack, image = "#", requiredTeamSize } = props.project;
-
   return (
     <div onClick={() => alert(name + " | " + description)} className="project-container">
       <div

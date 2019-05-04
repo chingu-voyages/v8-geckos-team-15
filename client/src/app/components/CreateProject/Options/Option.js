@@ -25,17 +25,17 @@ class Option extends React.Component {
   }
 
   handleClick() {
-    const { name, checkMax, isMax } = this.props;
+    const { name, checkMax, isMax, onUpdateSelection } = this.props;
     const { isActive } = this.state;
 
     if (this.state.isActive) {
       this.setState({ isActive: false });
-      checkMax(-1, this.props.name);
+      checkMax(-1, name);
     } else if (!isActive && isMax !== true) {
       this.setState({ isActive: !isActive });
       checkMax(1, name);
     }
-    this.props.onUpdateSelection(this.props.name);
+    onUpdateSelection(name);
   }
 
   render() {

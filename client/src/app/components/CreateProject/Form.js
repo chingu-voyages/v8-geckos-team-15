@@ -1,5 +1,6 @@
 import React from "react";
 import OptionsContainer from "./Options/OptionsContainer";
+import teckStackValues from "../Projects/techStackChoices";
 import "./styles.css";
 
 class Form extends React.Component {
@@ -17,10 +18,17 @@ class Form extends React.Component {
   }
 
   onUpdateSelection(buttonTitle, type) {
+    const { stack } = this.state;
     if (type === "stack") {
-      this.setState(prevState => ({
-        stack: [...prevState.stack, buttonTitle]
-      }));
+      if (!stack.includes(buttonTitle) && stack.length < 5) {
+        this.setState(prevState => ({
+          stack: [...prevState.stack, buttonTitle]
+        }));
+      } else {
+        this.setState(prevState => ({
+          stack: prevState.stack.filter(item => item !== buttonTitle)
+        }));
+      }
     } else if (type === "level") {
       this.setState({ level: buttonTitle });
     } else if (type === "requiredTeamSize") {
@@ -111,17 +119,7 @@ class Form extends React.Component {
               Languages <span> Pick up to 5</span>
             </div>
             <OptionsContainer
-              options={[
-                "React",
-                "React Native",
-                "Angular",
-                "NodeJS",
-                "MongoDB",
-                "VueJS",
-                "HTML5",
-                "CSS3",
-                "Sass"
-              ]}
+              options={teckStackValues}
               maxAllowed={5}
               defaultSelection={this.state.stack[0]}
               reset={this.state.reset}

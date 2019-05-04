@@ -24,12 +24,7 @@ const ProjectTileLevel = ({ level }) => {
   const noFill = createNonFilled(maxLevel - adjustedLevel);
   const filled = createFilled(adjustedLevel);
 
-  return (
-    <div className="level-container">
-      {filled}
-      {noFill}
-    </div>
-  );
+  return <div className="level-container">{level}</div>;
 };
 
 export default ProjectTileLevel;
