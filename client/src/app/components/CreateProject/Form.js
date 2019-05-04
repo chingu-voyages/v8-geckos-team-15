@@ -18,14 +18,21 @@ class Form extends React.Component {
 
   onUpdateSelection(buttonTitle, type) {
     if (type === "stack") {
-      this.setState(prevState => ({
-        stack: [...prevState.stack, buttonTitle]
-      }));
+      if (this.state.stack.indexOf(buttonTitle) === -1 && this.state.stack.length < 5) {
+        this.setState(prevState => ({
+          stack: [...prevState.stack, buttonTitle]
+        }));
+      } else {
+        this.setState(prevState => ({
+          stack: prevState.stack.filter(item => item !== buttonTitle)
+        }));
+      }
     } else if (type === "level") {
       this.setState({ level: buttonTitle });
     } else if (type === "requiredTeamSize") {
       this.setState({ requiredTeamSize: buttonTitle });
     }
+    console.log(this.state);
   }
 
   onChangeInput({ target: { name, value } }) {
