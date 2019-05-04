@@ -20,7 +20,6 @@ const ProjectTile = props => {
     console.log(randomNumber);
     return images[randomNumber - 1];
   };
-
   return (
     <div onClick={() => alert(name + " | " + description)} className="project-container">
       <div
