@@ -47,9 +47,10 @@ class Form extends React.Component {
       .then(response => response.json())
       .then(jsonRes => {
         if (jsonRes.success) {
-          console.log(jsonRes.project);
+          alert("Project created successfuly!");
+        } else {
+          throw Error(jsonRes.error);
         }
-        throw Error(jsonRes.error);
       })
       .catch(error => {
         console.log(error.message);

@@ -16,8 +16,9 @@ class Projects extends Component {
         if (jsonRes.success) {
           console.log(jsonRes.projects);
           this.setState({ projects: jsonRes.projects });
+        } else {
+          throw Error(jsonRes.error);
         }
-        throw Error(jsonRes.error);
       })
       .catch(error => {
         console.log(error.message);
